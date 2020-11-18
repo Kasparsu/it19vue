@@ -12152,7 +12152,13 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/bulma/bulma.sass":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -20852,7 +20858,7 @@ if (inBrowser) {
 
 var _default = Vue;
 exports.default = _default;
-},{}],"Example.vue":[function(require,module,exports) {
+},{}],"components/modal.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -20869,10 +20875,379 @@ exports.default = void 0;
 //
 //
 //
+var _default = {};
+exports.default = _default;
+        var $b42293 = exports.default || module.exports;
+      
+      if (typeof $b42293 === 'function') {
+        $b42293 = $b42293.options;
+      }
+    
+        /* template */
+        Object.assign($b42293, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal is-active" }, [
+    _c("div", {
+      staticClass: "modal-background",
+      on: {
+        click: function($event) {
+          return _vm.$emit("close")
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-content" }, [_vm._t("default")], 2),
+    _vm._v(" "),
+    _c("button", {
+      staticClass: "modal-close is-large",
+      attrs: { "aria-label": "close" },
+      on: {
+        click: function($event) {
+          return _vm.$emit("close")
+        }
+      }
+    })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$b42293', $b42293);
+          } else {
+            api.reload('$b42293', $b42293);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"components/modalExample.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _modal = _interopRequireDefault(require("./modal"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
+  components: {
+    modal: _modal.default
+  },
   data: function data() {
     return {
-      isGreen: true
+      isOpen: false,
+      isOpen2: false
+    };
+  }
+};
+exports.default = _default;
+        var $e07214 = exports.default || module.exports;
+      
+      if (typeof $e07214 === 'function') {
+        $e07214 = $e07214.options;
+      }
+    
+        /* template */
+        Object.assign($e07214, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "section" },
+    [
+      _c(
+        "modal",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.isOpen,
+              expression: "isOpen"
+            }
+          ],
+          on: {
+            close: function($event) {
+              _vm.isOpen = false
+            }
+          }
+        },
+        [
+          _c("p", { staticClass: "image is-4by3" }, [
+            _c("img", {
+              attrs: {
+                src: "https://bulma.io/images/placeholders/1280x960.png",
+                alt: ""
+              }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.isOpen2,
+              expression: "isOpen2"
+            }
+          ],
+          on: {
+            close: function($event) {
+              _vm.isOpen2 = false
+            }
+          }
+        },
+        [
+          _c("p", { staticClass: "image is-4by3" }, [
+            _c("img", {
+              attrs: { src: "http://placekitten.com/1280/960", alt: "" }
+            })
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "button is-primary is-fullwidth",
+          on: {
+            click: function($event) {
+              _vm.isOpen = true
+            }
+          }
+        },
+        [_vm._v("Open Modal")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "button is-primary is-fullwidth",
+          on: {
+            click: function($event) {
+              _vm.isOpen2 = true
+            }
+          }
+        },
+        [_vm._v("Open Cat Img")]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$e07214', $e07214);
+          } else {
+            api.reload('$e07214', $e07214);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"./modal":"components/modal.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"components/tabs.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  props: ['items'],
+  data: function data() {
+    return {
+      active: 0
+    };
+  }
+};
+exports.default = _default;
+        var $897a73 = exports.default || module.exports;
+      
+      if (typeof $897a73 === 'function') {
+        $897a73 = $897a73.options;
+      }
+    
+        /* template */
+        Object.assign($897a73, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs" }, [
+    _c(
+      "ul",
+      _vm._l(_vm.items, function(item, index) {
+        return _c(
+          "li",
+          { key: index, class: { "is-active": index == _vm.active } },
+          [
+            _c(
+              "a",
+              {
+                on: {
+                  click: function($event) {
+                    _vm.active = index
+                  }
+                }
+              },
+              [_vm._v(_vm._s(item))]
+            )
+          ]
+        )
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$897a73', $897a73);
+          } else {
+            api.reload('$897a73', $897a73);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"Example.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _modalExample = _interopRequireDefault(require("./components/modalExample.vue"));
+
+var _tabs = _interopRequireDefault(require("./components/tabs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  components: {
+    tabs: _tabs.default,
+    'modal-example': _modalExample.default
+  },
+  data: function data() {
+    return {
+      menuItems: ['Modal']
     };
   }
 };
@@ -20889,20 +21264,15 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "button",
-      {
-        class: { green: _vm.isGreen, red: !_vm.isGreen },
-        on: {
-          click: function($event) {
-            _vm.isGreen = !_vm.isGreen
-          }
-        }
-      },
-      [_vm._v("Click me!")]
-    )
-  ])
+  return _c(
+    "div",
+    [
+      _c("tabs", { attrs: { items: _vm.menuItems } }),
+      _vm._v(" "),
+      _c("modal-example")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -20937,10 +21307,12 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"main.js":[function(require,module,exports) {
+},{"./components/modalExample.vue":"components/modalExample.vue","./components/tabs":"components/tabs.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _vueCommon = _interopRequireDefault(require("vue/dist/vue.common.js"));
+
+require("bulma");
 
 var _Example = _interopRequireDefault(require("./Example.vue"));
 
@@ -20951,7 +21323,7 @@ _vueCommon.default.component('example', _Example.default);
 var App = new _vueCommon.default({
   el: "#app"
 });
-},{"vue/dist/vue.common.js":"node_modules/vue/dist/vue.common.js","./Example.vue":"Example.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue/dist/vue.common.js":"node_modules/vue/dist/vue.common.js","bulma":"node_modules/bulma/bulma.sass","./Example.vue":"Example.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -20979,7 +21351,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59555" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57359" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

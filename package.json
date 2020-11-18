@@ -10,6 +10,7 @@
   "keywords": [],
   "description": "",
   "dependencies": {
+    "bulma": "^0.9.1",
     "parcel-bundler": "^1.12.4",
     "vue": "^2.6.12",
     "vue-hot-reload-api": "^2.3.4"

@@ -1,18 +1,24 @@
 <template>
 <div>
 
-  <button 
-  :class="{green: isGreen, red: !isGreen}"
-  @click="isGreen=!isGreen">Click me!</button>
-
+    <tabs :items="menuItems"></tabs>
+    <modal-example></modal-example>
 </div>
 </template>
 
 <script>
+import ModalExample from './components/modalExample.vue';
+import Tabs from './components/tabs';
 export default {
+    components: {
+        tabs:Tabs,
+        'modal-example': ModalExample
+    },
     data(){
         return {
-            isGreen: true
+            menuItems: [
+                'Modal'
+            ],
         }
     }
 }
