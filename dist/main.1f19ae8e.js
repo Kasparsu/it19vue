@@ -20869,31 +20869,11 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
 var _default = {
-  props: ["text"],
   data: function data() {
     return {
-      message: "Hello it19",
-      items: ['Sai', 'Piim', 'Viin', 'Coca']
+      isGreen: true
     };
-  },
-  computed: {
-    reversed: function reversed() {
-      return this.message.split('').reverse().join('');
-    }
-  },
-  methods: {
-    add: function add() {
-      if (this.message !== '') {
-        this.items.push(this.message);
-        this.message = '';
-      }
-    }
   }
 };
 exports.default = _default;
@@ -20910,51 +20890,17 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.message,
-          expression: "message"
-        }
-      ],
-      attrs: { type: "text" },
-      domProps: { value: _vm.message },
-      on: {
-        input: function($event) {
-          if ($event.target.composing) {
-            return
-          }
-          _vm.message = $event.target.value
-        }
-      }
-    }),
-    _vm._v(" "),
     _c(
       "button",
       {
+        class: { green: _vm.isGreen, red: !_vm.isGreen },
         on: {
           click: function($event) {
-            return _vm.add()
+            _vm.isGreen = !_vm.isGreen
           }
         }
       },
-      [_vm._v("add")]
-    ),
-    _vm._v(" "),
-    _c("h1", [_vm._v(_vm._s(_vm.message))]),
-    _vm._v(" "),
-    _c("h1", [_vm._v(_vm._s(_vm.reversed))]),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(_vm.text))]),
-    _vm._v(" "),
-    _c(
-      "ul",
-      _vm._l(_vm.items, function(item) {
-        return _c("li", { key: item }, [_vm._v(_vm._s(item))])
-      }),
-      0
+      [_vm._v("Click me!")]
     )
   ])
 }
@@ -21033,7 +20979,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60784" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59555" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
